@@ -35,3 +35,42 @@ function enter(username, password){
     window.alert(userName.value + " " + Password.value);
     // window.alert(Password.value);
 };
+
+function enter() {
+    var userName = document.getElementById("username").value;
+    var Password = document.getElementById("password").value;
+
+  
+    var newUser = {
+        "username": userName,
+        "password": Password,
+        "flagged": false
+    };
+
+
+    jsonData.push(newUser);
+
+    console.log(jsonData);
+
+    
+}
+
+function new_user() {
+    var userName = document.getElementById("username").value;
+    var Password = document.getElementById("password").value;
+
+ 
+    var newUser = {
+        "username": userName,
+        "password": Password,
+        "flagged": false
+    };
+
+    
+    jsonData.push(newUser);
+
+    console.log(jsonData);
+
+  
+}
+
