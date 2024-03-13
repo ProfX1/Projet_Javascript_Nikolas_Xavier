@@ -28,13 +28,13 @@ function handleJSON(response) {
 
 loadJSON(handleJSON);
 
-function enter(username, password){
+// function enter(username, password){
 
-    var userName = document.getElementById("username");
-    var Password = document.getElementById("password");
-    window.alert(userName.value + " " + Password.value);
-    // window.alert(Password.value);
-};
+//     var userName = document.getElementById("username");
+//     var Password = document.getElementById("password");
+//     window.alert(userName.value + " " + Password.value);
+//     // window.alert(Password.value);
+// };
 
 function enter(username, password) {
     var userName = document.getElementById("username").value;
