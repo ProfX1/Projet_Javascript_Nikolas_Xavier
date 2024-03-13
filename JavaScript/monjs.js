@@ -19,7 +19,19 @@ function handleJSON(response) {
         console.log("Username:", user.username);
         console.log("Password:", user.password);
         console.log("Flagged:", user.flagged);
-    });
+        
+        
+    })
+    
+    ;
 }
 
 loadJSON(handleJSON);
+
+function enter(username, password){
+
+    var userName = document.getElementById("username");
+    var Password = document.getElementById("password");
+    window.alert("hello");
+    window.alert("world");
+};
