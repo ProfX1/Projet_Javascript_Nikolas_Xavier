@@ -32,6 +32,6 @@ function enter(username, password){
 
     var userName = document.getElementById("username");
     var Password = document.getElementById("password");
-    window.alert(userName.value);
-    window.alert(Password.value);
+    window.alert(userName.value + " " + Password.value);
+    // window.alert(Password.value);
 };
