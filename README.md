@@ -9,6 +9,9 @@ Si on essaie d'entrer comme un utilisateur déjà utilisé et qu'on ne mets pas 
 
 Message d'erreur si mot de passe ou utilisateur incorrect
 
+(diviser page username et page password et mettre un captcha)
+(pour enlever un usager, faire un boolean qui va donner un vrai ou faux pour suspended or not)
+
 rencontre 12 mars, 19 mars, 26 mars
 
 
