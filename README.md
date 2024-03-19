@@ -14,6 +14,8 @@ Message d'erreur si mot de passe ou utilisateur incorrect
 
 pour encrypter le text dans notre json on pourrait utiliser vigenere et le ranger dans le json comme encrypted text au lieu de plain text, plus securitaire et possiblement plus de points poour l'aspect cybersecurite
 
+possible intergration of MongoDB, I am not going to be implementing it at the moment to ensure that everything can work together before implementing a new solution to handle json files
+ 
 rencontre 12 mars, 19 mars, 26 mars
 
 
