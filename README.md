@@ -12,6 +12,8 @@ Message d'erreur si mot de passe ou utilisateur incorrect
 (diviser page username et page password et mettre un captcha)
 (pour enlever un usager, faire un boolean qui va donner un vrai ou faux pour suspended or not)
 
+pour encrypter le text dans notre json on pourrait utiliser vigenere et le ranger dans le json comme encrypted text au lieu de plain text, plus s/curitaire et possiblement plus de points poour l'aspect cybersecurite
+
 rencontre 12 mars, 19 mars, 26 mars
 
 
