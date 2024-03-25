@@ -2,11 +2,12 @@ import random
 import base64
 
 def encode(key, clear):
+	clear1 = clear.replace("\n", "")
 	enc = []
 
-	for i in range(len(clear)):
+	for i in range(len(clear1)):
 		key_c = key[i % len(key)]
-		enc_c = chr((ord(clear[i]) +
+		enc_c = chr((ord(clear1[i]) +
 					ord(key_c)) % 256)
 
 		enc.append(enc_c)
@@ -15,12 +16,13 @@ def encode(key, clear):
 
 # Function to decode
 def decode(key, enc):
+	enc1 = enc.replace("\n", "")
 	dec = []
 
-	enc = base64.urlsafe_b64decode(enc).decode()
-	for i in range(len(enc)):
+	enc = base64.urlsafe_b64decode(enc1).decode()
+	for i in range(len(enc1)):
 		key_c = key[i % len(key)]
-		dec_c = chr((256 + ord(enc[i]) -
+		dec_c = chr((256 + ord(enc1[i]) -
 						ord(key_c)) % 256)
 
 		dec.append(dec_c)
