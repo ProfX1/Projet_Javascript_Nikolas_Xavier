@@ -8,7 +8,7 @@ key = "gattaca"
 
 app=Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
     with open('Projet_Javascript_Nikolas_Xavier\JSON\pass.json', 'r') as file:
         users = json.load(file)
