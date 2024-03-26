@@ -10,7 +10,7 @@ app=Flask(__name__)
 
 @app.route('/')
 def index():
-    with open('Projet_Javascript_Nikolas_Xavier\JSON\pass.json', 'r') as file:
+    with open('Projet_Javascript_Nikolas_Xavier\\JSON\\pass.json', 'r') as file:
         users = json.load(file)
 
     # Initialize empty lists for usernames and passwords
