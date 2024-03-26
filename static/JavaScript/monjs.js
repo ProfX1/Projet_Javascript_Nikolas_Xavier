@@ -67,6 +67,7 @@ loadJSON(handleJSON);
 
 //     var userName = document.getElementById("username");
 //     var Password = document.getElementById("password");
+    // Document.write(username)
 //     window.alert(userName.value + " " + Password.value);
 //     // window.alert(Password.value);
 // };
