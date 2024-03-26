@@ -16,6 +16,9 @@ pour encrypter le text dans notre json on pourrait utiliser vigenere et le range
 
 possible intergration of MongoDB, I am not going to be implementing it at the moment to ensure that everything can work together before implementing a new solution to handle json files
  
+
+use edge for best intergration with the password function
+
 rencontre 12 mars, 19 mars, 26 mars
 
 
