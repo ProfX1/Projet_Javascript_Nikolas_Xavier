@@ -29,4 +29,8 @@ def index():
     
     return render_template("index.html", usernames=usernames, plain_passwords=password)
 
+@app.route('/password')
+def index():
+     
+
 app.run(debug=True)
