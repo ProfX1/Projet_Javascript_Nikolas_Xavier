@@ -134,7 +134,7 @@ input:focus {
 #Big_Red {
 
     text-align: center;
-    margin-top: 5em;
+    margin-top: 10em;
 }
 
 /* //////////////////////////////////////////// */
@@ -197,6 +197,10 @@ button:hover {
 /* buttons hover Animation */
 button:hover {
     animation: ani9 0.4s ease-in-out infinite alternate;
+}
+
+.round_btn:hover {
+    background-image: radial-gradient(circle, #ff6666, #cc0000); /* Change gradient on hover */
 }
 @keyframes ani9 {
     0% {
