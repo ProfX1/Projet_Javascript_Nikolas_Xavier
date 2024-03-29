@@ -45,6 +45,10 @@ def password():
 def passwordPost():
     users=json.load(open("JSON\\user.json"))
     passwords = json.load(open("JSON\\pass.json"))
+    userID = {}
+    userID ['password'] = request.form['pwd'] 
+    if c.decode(key, userID["password"]) in passwords:
+        print("hello", userID["username"], "!")
 
     return redirect('/')
 
