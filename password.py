@@ -10,27 +10,43 @@ app=Flask(__name__)
 
 @app.route('/')
 def index():
-    with open('JSON\\pass.json', 'r') as file:
-        users = json.load(file)
+    usrs=json.load(open("JSON\\user.json"))
+    passwrds = json.load(open("JSON\\pass.json"))
 
     # Initialize empty lists for usernames and passwords
     usernames = []
     passwords = []
     plain_passwords = []
+    print(usrs)
+    print(passwrds)
     # Extract usernames and passwords from the loaded data
-    for user in users:
+    for user in usrs:
         usernames.append(user['username'])
         passwords.append(user['password'])
 
-    for password in passwords:
+    for password in passwrds:
           decyphered_password=c.decode(key, password)
           plain_passwords.append(decyphered_password)
 
     
     return render_template("index.html", usernames=usernames, plain_passwords=password)
 
-@app.route('/password')
-def index():
-     
+@app.route('/password', methods=['GET'])
+def password():
+    users=json.load(open("JSON\\user.json"))
+    passwords = json.load(open("JSON\\pass.json"))
+
+    plain_password = []
+
+         
+    return render_template("index.html", users=users, plain_passwords=passwords)
+
+@app.route('/password', methods=['POST'])
+def passwordPost():
+    users=json.load(open("JSON\\user.json"))
+    passwords = json.load(open("JSON\\pass.json"))
+
+    return redirect('/')
+
 
 app.run(debug=True)

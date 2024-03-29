@@ -1,8 +1,7 @@
 [
     {
-        "username" : "Admin",
-        "password" : "wqjDhcOhw53Djw==",
-        "flagged"  : false
+        "id" : 1,
+        "password" : "wqjDhcOhw53Djw=="
     }
 
 
