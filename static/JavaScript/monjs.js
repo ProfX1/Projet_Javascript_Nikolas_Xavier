@@ -1,4 +1,5 @@
 key ="gattaca"
+
 function vigenereCipher(text, key, mode) {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let result = '';
@@ -142,3 +143,20 @@ document.getElementById("eye").addEventListener("click", function () {
     }
 }, false);
 
+
+// event on click of button DO NOT PRESS
+function hovering(){
+    window.alert('hello')
+
+}
+
+
+function haha(){
+
+    var audio = new Audio();
+
+    audio.src = '../../static/Media/ButtonAudio.mp3';
+
+    audio.play();
+    window.alert('Bad')
+}

@@ -49,6 +49,7 @@ def passwordPost():
     userID ['password'] = request.form['pwd'] 
     if c.decode(key, userID["password"]) in passwords:
         print("hello", userID["username"], "!")
+        return redirect('Docs\\SuperSecret.html', passwords=passwords)
 
     return redirect('/')
 
