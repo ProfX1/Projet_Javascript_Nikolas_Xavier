@@ -73,8 +73,8 @@ loadJSON(handleJSON);
 // };
 
 function enter(username, password) {
-    var userName = document.getElementById("username").value;
-    var Password = document.getElementById("password").value;
+    var userName = document.getElementById("txt-input").value;
+    var Password = document.getElementById("pwd").value;
     var cryptedPassword = vigenereCipher(Password, key, 'encrypt')
 
     if (cryptedPassword == 'Hello World') {

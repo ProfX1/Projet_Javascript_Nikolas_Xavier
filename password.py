@@ -20,13 +20,13 @@ def index():
     print(usrs)
     print(passwrds)
     # Extract usernames and passwords from the loaded data
-    for user in usrs:
-        usernames.append(user['username'])
-        passwords.append(user['password'])
+    # for user in usrs:
+    #     usernames.append(user['username'])
+    #     passwords.append(user['password'])
 
-    for password in passwrds:
-          decyphered_password=c.decode(key, password)
-          plain_passwords.append(decyphered_password)
+    # for password in passwrds:
+    #       decyphered_password=c.decode(key, password)
+    #       plain_passwords.append(decyphered_password)
 
     
     return render_template("index.html", usernames=usernames, plain_passwords=password)
@@ -39,7 +39,7 @@ def password():
     plain_password = []
 
          
-    return render_template("index.html", users=users, plain_passwords=passwords)
+    return render_template("Docs\\password.html", users=users, plain_passwords=passwords)
 
 @app.route('/password', methods=['POST'])
 def passwordPost():
