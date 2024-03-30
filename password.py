@@ -5,7 +5,7 @@ import cryptage as c
 
 key = "gattaca"
 
-
+setuser = ""
 app=Flask(__name__)
 
 @app.route('/')
@@ -40,6 +40,7 @@ def index():
 
 @app.route('/password', methods=['GET', "POST"])
 def password():
+    global key
     users=json.load(open("JSON\\user.json"))
     if request.method == "POST":
         
@@ -48,7 +49,9 @@ def password():
 
         if UserName in [user['username'] for user in users]:
             print("this is in the list")
-            return render_template("password.html", users=users)
+            global setuser
+            setuser = UserName
+            return render_template("password.html", users=users, UserName=UserName)
 
         else:
             print("this is not in the list")
@@ -62,17 +65,37 @@ def password():
             
         # return render_template("password.html", users=users)
 
-# @app.route('/password', methods=['POST'])
-# def passwordPost():
-#     users=json.load(open("JSON\\user.json"))
+@app.route('/SuperSecret', methods=['GET', 'POST'])
+def supersecret():
+    global key
+    global setuser
+    users=json.load(open("JSON\\user.json"))
+    print("we are in supersecret")
+    if request.method == 'POST':
+        username = request.form.get('username')
+        Password = request.form.get('password')
+        Password = c.encode(key, Password)
+        print(setuser)
+        print(Password)
 
-#     userID = {}
-#     userID ['password'] = request.form['pwd'] 
-#     if c.decode(key, userID["password"]) in users:
-#         print("hello", userID["username"], "!")
-#         return redirect('Docs\\SuperSecret.html')
+        for user in users:
+            if user["password"] == Password and user["username"] == setuser:
+                print("password correct")
+                return render_template('SuperSecret.html', Password=Password, users=users)
 
-#     return redirect('Docs\\SuperSecret.html')8
+                
+        # if (Password, setuser) in [(user['password'], user['username']) for user in users]:
+        #     print("password is in the list")
+        #     return render_template('SuperSecret.html', Password=Password, users=users)
+        # else:
+        #     print("no go")
+    # userID = {}
+    # userID ['password'] = request.form['pwd'] 
+    # if c.decode(key, userID["password"]) in users:
+    #     print("hello", userID["username"], "!")
+    #     return redirect('Docs\\SuperSecret.html')
+
+    return render_template('index.html', Password=Password, users=users)
 
 
 app.run(debug=True)
