@@ -158,5 +158,5 @@ function haha(){
     audio.src = '../../static/Media/ButtonAudio.mp3';
 
     audio.play();
-    window.alert('Bad')
+    // window.alert('Bad')
 }

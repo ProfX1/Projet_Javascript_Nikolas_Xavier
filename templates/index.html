@@ -66,20 +66,22 @@
     <!--   other buttons -->
        <div class="other">
     <!--      Forgot Password button-->
-          <button class="btn submits frgt-pass"><a href="{{url_for('signup')}}"Forgot Password</button>
+          <button class="btn submits frgt-pass"><a href="{{url_for('SignUp')}}">Forgot Password</a></button>
     <!--     Sign Up button -->
-          <button type="submit" onclick="new_user()" class="btn submits sign-up">Sign Up 
+          <button type="submit" onclick="new_user()" class="btn submits sign-up"> <a href="{{url_for('SignUp')}}">Sign Up</a> </button>
     <!--         Sign Up font icon -->
           <i class="fa fa-user-plus" aria-hidden="true"></i>
           </button>
     <!--      End Other the Division -->
        </div>
          
-    <!--   End Conrainer  -->
+    <!--   End Container  -->
       </div>
       
       <!-- End Form -->
     </form>
+    <a href="{{url_for('SignUp')}}">Forgot Password</a>
     </div>
+
 </body>
 </html>

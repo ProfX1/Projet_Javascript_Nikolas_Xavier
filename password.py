@@ -38,12 +38,14 @@ def index():
     
     return render_template("index.html", usrs=usernames)
 
+#signup to the site
 @app.route('/SignUp', methods=['GET', "POST"])
-def signup():
+def SignUp():
     users = json.load(open("JSON\\user.json"))
     newUser={}
 
     if request.method == 'POST':
+        print("processing")
         userid = (max(users, key=lambda x: x['id'])['id']) + 1
         newUser['id'] = userid
         username = request.form.get('username')
@@ -54,7 +56,8 @@ def signup():
         newUser['flagged'] = False
         users.append(newUser)
         json.dump(users, open("JSON\\user.json", 'w'), indent=4)
-        return redirect('/')
+        return render_template('index.html', users=users)
+    return render_template('signup.html')
 
 
 @app.route('/password', methods=['GET', "POST"])
