@@ -38,6 +38,25 @@ def index():
     
     return render_template("index.html", usrs=usernames)
 
+@app.route('/SignUp', methods=['GET', "POST"])
+def signup():
+    users = json.load(open("JSON\\user.json"))
+    newUser={}
+
+    if request.method == 'POST':
+        userid = (max(users, key=lambda x: x['id'])['id']) + 1
+        newUser['id'] = userid
+        username = request.form.get('username')
+        newUser['username'] = username
+        password = request.form.get('password')
+        password = c.encode(key, password)
+        newUser['password'] = password
+        newUser['flagged'] = False
+        users.append(newUser)
+        json.dump(users, open("JSON\\user.json", 'w'), indent=4)
+        return redirect('/')
+
+
 @app.route('/password', methods=['GET', "POST"])
 def password():
     global key
