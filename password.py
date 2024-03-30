@@ -95,7 +95,7 @@ def supersecret():
     #     print("hello", userID["username"], "!")
     #     return redirect('Docs\\SuperSecret.html')
 
-    return render_template('index.html', Password=Password, users=users)
+    return redirect('/')
 
 
 app.run(debug=True)
