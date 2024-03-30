@@ -57,10 +57,10 @@ def password():
         # userUserName["username"]=request.form["username"]
         # print(userUserName["username"])
 
-        plain_password = []
+        # plain_password = []
 
             
-        return render_template("password.html", users=users)
+        # return render_template("password.html", users=users)
 
 # @app.route('/password', methods=['POST'])
 # def passwordPost():
