@@ -19,8 +19,8 @@ def index():
     passwords = []
     passwords = [password['password'] for password in usrs]
     plain_passwords=[]
-    for plainPass in passwords:
-        plain_passwords.append(c.decode(key, plainPass))
+    # for plainPass in passwords:
+    #     plain_passwords.append(c.decode(key, plainPass))
     
     print(usrs)
     print(usernames)
@@ -38,30 +38,41 @@ def index():
     
     return render_template("index.html", usrs=usernames)
 
-@app.route('/password', methods=['GET'])
+@app.route('/password', methods=['GET', "POST"])
 def password():
     users=json.load(open("JSON\\user.json"))
+    if request.method == "POST":
+        
+        UserName = request.form.get("username")
+        print(UserName)
 
-    userUserName = {}
-    userUserName["username"]=request.form["username"]
-    print(userUserName["username"])
+        if UserName in [user['username'] for user in users]:
+            print("this is in the list")
+            return render_template("password.html", users=users)
 
-    plain_password = []
+        else:
+            print("this is not in the list")
+            return render_template("index.html", users=users)
+        # userUserName = {}
+        # userUserName["username"]=request.form["username"]
+        # print(userUserName["username"])
 
-         
-    return render_template("password.html", users=users)
+        plain_password = []
 
-@app.route('/password', methods=['POST'])
-def passwordPost():
-    users=json.load(open("JSON\\user.json"))
+            
+        return render_template("password.html", users=users)
 
-    userID = {}
-    userID ['password'] = request.form['pwd'] 
-    if c.decode(key, userID["password"]) in users:
-        print("hello", userID["username"], "!")
-        return redirect('Docs\\SuperSecret.html')
+# @app.route('/password', methods=['POST'])
+# def passwordPost():
+#     users=json.load(open("JSON\\user.json"))
 
-    return redirect('Docs\\SuperSecret.html')
+#     userID = {}
+#     userID ['password'] = request.form['pwd'] 
+#     if c.decode(key, userID["password"]) in users:
+#         print("hello", userID["username"], "!")
+#         return redirect('Docs\\SuperSecret.html')
+
+#     return redirect('Docs\\SuperSecret.html')8
 
 
 app.run(debug=True)
