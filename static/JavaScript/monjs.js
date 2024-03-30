@@ -73,11 +73,13 @@ loadJSON(handleJSON);
 //     // window.alert(Password.value);
 // };
 
-function enter(username, password) {
-    var userName = document.getElementById("txt-input").value;
+function enter() {
+
+    var userName = document.getElementById("txt-input")
     var Password = document.getElementById("pwd").value;
     var cryptedPassword = vigenereCipher(Password, key, 'encrypt')
-
+    window.alert(document.getElementById("txt-input").value)
+    console.log(userName.value)
     if (cryptedPassword == 'Hello World') {
         document.write("hello")
     }
@@ -89,9 +91,7 @@ function enter(username, password) {
     };
 
 
-    jsonData.push(newUser);
 
-    console.log(jsonData);
 
     
 }

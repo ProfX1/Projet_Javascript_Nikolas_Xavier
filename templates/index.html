@@ -40,7 +40,7 @@
                <i class="fa fa-user-circle"></i>
              </span>
             <!--   user name Input-->
-             <input class="form-input" id="txt-input" type="text" placeholder="@UserName" required>
+             <input class="form-input" name="username" id="txt-input" type="text" placeholder="@UserName" required>
          
           <br>
          
@@ -60,7 +60,7 @@
           <br>
     <!--        buttons -->
     <!--      button LogIn -->
-          <button type="submit" onclick='enter()' class="log-in"> Log In </button>
+          <button type="submit" onclick='enter()' class="log-in"> <a href="{{ url_for('password') }}" class="size">Log In </a></button>
        </div>
       
     <!--   other buttons -->

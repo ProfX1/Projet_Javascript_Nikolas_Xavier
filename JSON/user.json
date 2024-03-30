@@ -1,9 +1,62 @@
 [
     {
-        "id" : 1,
-        "username" : "Admin",
-        "flagged"  : false
+        "id": 1,
+        "username": "Admin",
+        "password": "wqjDhcOhw53Djw==",
+        "flagged": false
+    },
+    {
+        "id": 2,
+        "username": "JaneDoe",
+        "password": "fsaRw8Fj2jd92==",
+        "flagged": false
+    },
+    {
+        "id": 3,
+        "username": "AliceSmith",
+        "password": "jw9Rk2Ow3Fjd==",
+        "flagged": false
+    },
+    {
+        "id": 4,
+        "username": "BobJohnson",
+        "password": "kwjR48d9Jdj8==",
+        "flagged": false
+    },
+    {
+        "id": 5,
+        "username": "EmilyBrown",
+        "password": "jw3Els82djw9==",
+        "flagged": false
+    },
+    {
+        "id": 6,
+        "username": "MichaelWilson",
+        "password": "wq58Dh2w3Ll9==",
+        "flagged": false
+    },
+    {
+        "id": 7,
+        "username": "SophiaClark",
+        "password": "jw82Hdn9Lqjs==",
+        "flagged": false
+    },
+    {
+        "id": 8,
+        "username": "DanielMartinez",
+        "password": "wq9R3k9Jd9wq==",
+        "flagged": false
+    },
+    {
+        "id": 9,
+        "username": "OliviaTaylor",
+        "password": "kslDh7wj29d8==",
+        "flagged": false
+    },
+    {
+        "id": 10,
+        "username": "WilliamAnderson",
+        "password": "djw29D0s82dnq==",
+        "flagged": false
     }
-
-
 ]

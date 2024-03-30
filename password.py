@@ -11,14 +11,21 @@ app=Flask(__name__)
 @app.route('/')
 def index():
     usrs=json.load(open("JSON\\user.json"))
-    passwrds = json.load(open("JSON\\pass.json"))
+
 
     # Initialize empty lists for usernames and passwords
     usernames = []
+    usernames = [user['username'] for user in usrs]
     passwords = []
-    plain_passwords = []
+    passwords = [password['password'] for password in usrs]
+    plain_passwords=[]
+    for plainPass in passwords:
+        plain_passwords.append(c.decode(key, plainPass))
+    
     print(usrs)
-    print(passwrds)
+    print(usernames)
+    print(plain_passwords)
+
     # Extract usernames and passwords from the loaded data
     # for user in usrs:
     #     usernames.append(user['username'])
@@ -29,29 +36,32 @@ def index():
     #       plain_passwords.append(decyphered_password)
 
     
-    return render_template("index.html", usernames=usernames, plain_passwords=password)
+    return render_template("index.html", usrs=usernames)
 
 @app.route('/password', methods=['GET'])
 def password():
     users=json.load(open("JSON\\user.json"))
-    passwords = json.load(open("JSON\\pass.json"))
+
+    userUserName = {}
+    userUserName["username"]=request.form["username"]
+    print(userUserName["username"])
 
     plain_password = []
 
          
-    return render_template("Docs\\password.html", users=users, plain_passwords=passwords)
+    return render_template("password.html", users=users)
 
 @app.route('/password', methods=['POST'])
 def passwordPost():
     users=json.load(open("JSON\\user.json"))
-    passwords = json.load(open("JSON\\pass.json"))
+
     userID = {}
     userID ['password'] = request.form['pwd'] 
-    if c.decode(key, userID["password"]) in passwords:
+    if c.decode(key, userID["password"]) in users:
         print("hello", userID["username"], "!")
-        return redirect('Docs\\SuperSecret.html', passwords=passwords)
+        return redirect('Docs\\SuperSecret.html')
 
-    return redirect('/')
+    return redirect('Docs\\SuperSecret.html')
 
 
 app.run(debug=True)
