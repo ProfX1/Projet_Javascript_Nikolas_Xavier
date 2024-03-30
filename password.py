@@ -59,6 +59,24 @@ def SignUp():
         return render_template('index.html', users=users)
     return render_template('signup.html')
 
+@app.route('/forgotPassword', methods=['GET', "POST"])
+def forgot():
+    users = json.load(open("JSON\\user.json"))
+    global key
+    changepassword = {}
+    if request.method == 'POST':
+        username = request.form.get('username')
+        newpassword = request.form.get('password')
+        userid={username: user['id'] for user in users}
+        userid=userid[username]
+        changepassword['id'] = userid
+        changepassword['username'] = username
+        changepassword['password'] = c.encode(key, newpassword)
+        changepassword['flagged'] = False
+
+        json.dump(changepassword, open("JSON\\user.json", 'w'), indent=4)
+        return render_template('index.html', users=users)
+    return render_template('forgotpassword.html')
 
 @app.route('/password', methods=['GET', "POST"])
 def password():
