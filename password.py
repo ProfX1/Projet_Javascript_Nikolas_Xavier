@@ -70,14 +70,19 @@ def forgot():
         newpassword = request.form.get('password')
         userid={username: user['id'] for user in users}
         userid=userid[username]
+        print(userid)
         changepassword['id'] = userid
         changepassword['username'] = username
         changepassword['password'] = c.encode(key, newpassword)
         changepassword['flagged'] = False
         for user in users:
             if user['id'] == changepassword['id']:
-                newlist.append(changepassword)
-                print('it worked')
+                if user['username']==changepassword['username']:
+                    newlist.append(changepassword)
+                    print('it worked')
+                else:
+                    newlist.append(user)
+                    print('lol no')
             else:
                 newlist.append(user)
                 print('other works')
