@@ -64,6 +64,7 @@ def forgot():
     users = json.load(open("JSON\\user.json"))
     global key
     changepassword = {}
+    newlist=[]
     if request.method == 'POST':
         username = request.form.get('username')
         newpassword = request.form.get('password')
@@ -73,8 +74,15 @@ def forgot():
         changepassword['username'] = username
         changepassword['password'] = c.encode(key, newpassword)
         changepassword['flagged'] = False
+        for user in users:
+            if user['id'] == changepassword['id']:
+                newlist.append(changepassword)
+                print('it worked')
+            else:
+                newlist.append(user)
+                print('other works')
 
-        json.dump(changepassword, open("JSON\\user.json", 'w'), indent=4)
+        json.dump(newlist, open("JSON\\user.json", 'w'), indent=4)
         return render_template('index.html', users=users)
     return render_template('forgotpassword.html')
 
