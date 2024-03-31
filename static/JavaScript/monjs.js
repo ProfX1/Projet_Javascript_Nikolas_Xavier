@@ -76,19 +76,21 @@ loadJSON(handleJSON);
 function logonusername() {
 
     var userName = document.getElementById("txt-input")
-    var Password = document.getElementById("pwd").value;
-    var cryptedPassword = vigenereCipher(Password, key, 'encrypt')
-    window.alert(document.getElementById("txt-input").value)
-    console.log(userName.value)
-    if (cryptedPassword == 'Hello World') {
-        document.write("hello")
-    }
+    // var Password = document.getElementById("pwd").value;
+    // var cryptedPassword = vigenereCipher(Password, key, 'encrypt')
+    // window.alert(document.getElementById("txt-input").value)
+    // console.log(userName.value)
+    // if (cryptedPassword == 'Hello World') {
+    //     document.write("hello")
+    // }
     
 }
 
 function logonpassword() {
-
+    var password = document.getElementById('pwd').value;
+    var cryptedPassword = vigenereCipher(password, key, 'encrypt')
     
+
 }
 
 function new_user() {
