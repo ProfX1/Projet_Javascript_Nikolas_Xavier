@@ -73,7 +73,7 @@ loadJSON(handleJSON);
 //     // window.alert(Password.value);
 // };
 
-function enter() {
+function logonusername() {
 
     var userName = document.getElementById("txt-input")
     var Password = document.getElementById("pwd").value;
@@ -83,15 +83,10 @@ function enter() {
     if (cryptedPassword == 'Hello World') {
         document.write("hello")
     }
-  
-    var newUser = {
-        "username": userName,
-        "password": Password,
-        "flagged": false
-    };
+    
+}
 
-
-
+function logonpassword() {
 
     
 }
