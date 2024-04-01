@@ -37,7 +37,7 @@ function vigenereCipher(text, key, mode) {
 function loadJSON(callback) {
     var xhr = new XMLHttpRequest();
     xhr.overrideMimeType("application/json");
-    xhr.open('GET', 'JSON/pass.json', true);
+    xhr.open('GET', '../../JSON/user.json', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
             callback(xhr.responseText);
