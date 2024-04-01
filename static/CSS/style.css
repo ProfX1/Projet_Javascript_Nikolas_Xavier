@@ -11,8 +11,8 @@
 
 /* Start body rules */
 body {
-    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    background-image: linear-gradient(-225deg, #000000 0%, #5d0055 100%);
+background-image: linear-gradient(to top, #000000 0%, #5d0055 100%);
 background-attachment: fixed;
   background-repeat: no-repeat;
 
@@ -42,7 +42,7 @@ form {
     margin: 2% auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
-    background-image: linear-gradient(-225deg, #E3FDF5 50%, #FFE6FA 50%);
+    background-image: linear-gradient(-225deg, #868686 50%, #dd4fc1 50%);
 }
 /* form Container */
 form .con {
@@ -202,6 +202,11 @@ button:hover {
 .round_btn:hover {
     background-image: radial-gradient(circle, #ff6666, #cc0000); /* Change gradient on hover */
 }
+
+#nopress {
+    color:#989898
+}
+
 @keyframes ani9 {
     0% {
         transform: translateY(3px);

@@ -142,11 +142,6 @@ document.getElementById("eye").addEventListener("click", function () {
 
 
 // event on click of button DO NOT PRESS
-function hovering(){
-    window.alert('hello')
-
-}
-
 
 function haha(){
 
