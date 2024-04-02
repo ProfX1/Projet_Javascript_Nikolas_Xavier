@@ -64,5 +64,11 @@
         "username": "Ben",
         "password": "wqvDkMOqw5nDkw==",
         "flagged": false
+    },
+    {
+        "id": 12,
+        "username": "nikolas",
+        "password": "w4nDgsOnw6XDlsOI",
+        "flagged": false
     }
 ]
