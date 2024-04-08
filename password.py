@@ -19,21 +19,13 @@ def index():
     passwords = []
     passwords = [password['password'] for password in usrs]
     plain_passwords=[]
-    # for plainPass in passwords:
-    #     plain_passwords.append(c.decode(key, plainPass))
+
     
     print(usrs)
     print(usernames)
     print(plain_passwords)
 
-    # Extract usernames and passwords from the loaded data
-    # for user in usrs:
-    #     usernames.append(user['username'])
-    #     passwords.append(user['password'])
 
-    # for password in passwrds:
-    #       decyphered_password=c.decode(key, password)
-    #       plain_passwords.append(decyphered_password)
 
     
     return render_template("index.html", usrs=usernames)
@@ -109,14 +101,7 @@ def password():
         else:
             print("this is not in the list")
             return render_template("index.html", users=users)
-        # userUserName = {}
-        # userUserName["username"]=request.form["username"]
-        # print(userUserName["username"])
 
-        # plain_password = []
-
-            
-        # return render_template("password.html", users=users)
 
 @app.route('/SuperSecret', methods=['GET', 'POST'])
 def supersecret():
@@ -136,17 +121,7 @@ def supersecret():
                 print("password correct")
                 return render_template('SuperSecret.html', Password=Password, users=users)
 
-                
-        # if (Password, setuser) in [(user['password'], user['username']) for user in users]:
-        #     print("password is in the list")
-        #     return render_template('SuperSecret.html', Password=Password, users=users)
-        # else:
-        #     print("no go")
-    # userID = {}
-    # userID ['password'] = request.form['pwd'] 
-    # if c.decode(key, userID["password"]) in users:
-    #     print("hello", userID["username"], "!")
-    #     return redirect('Docs\\SuperSecret.html')
+
 
     return redirect('/')
 

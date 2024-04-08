@@ -22,3 +22,18 @@ use edge for best intergration with the password function
 rencontre 12 mars, 19 mars, 26 mars
 
 
+
+passwords utilisés 
+
+Admin
+password123
+iloveyou
+letmein
+qwerty
+abc123
+sunshine
+football
+123456
+welcome
+Dover
+afk123
